@@ -14,6 +14,10 @@ export class UserInventory{
         return this.#currentTool;
     }
 
+    setCurrentToll(pickedToll){
+        this.#currentTool = this.#tolls[pickedToll-6];
+    }
+
     addToInventory(typeVal){
         for(let theToll of this.#tolls){
             if(theToll == typeVal){

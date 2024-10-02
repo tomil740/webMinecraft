@@ -35,6 +35,19 @@ export class DrawData{
         }
     }
 
+    drawMenu(onMenuPickData){
+        //menu items id
+        const menuItemsId = [6,7,8,9,10];
+        const theMenuItem = document.querySelectorAll("#userMenu .menuItem");
+        let counter = 0;
+        theMenuItem.forEach((menuItem)=>{
+            const theId =`squareItemType-${menuItemsId[counter]}`
+            //console.log("calledWith",theId)
+            menuItem.addEventListener("click",()=>{onMenuPickData(theId)});
+            counter++;
+        })
+    }
+
     updateUiElement(theId,elementType){
         const theElement = document.querySelector(`#${theId}`);
         this.removeAllTypes(theElement);
@@ -47,6 +60,20 @@ export class DrawData{
         for(let classType = 1; classType < 6; classType++){
             theElement.classList.remove(`squareItemType${classType}`);
         }
+    }
+
+    onMenuPick(toPick){
+        this.cleanMenuPick();
+        const current = document.querySelector(`#${toPick}`);
+        console.log(current);
+        console.log(toPick);
+        current.classList.add("pickedItem");
+    }
+
+    cleanMenuPick(){
+        document.querySelectorAll(".menuItemIcon").forEach((item)=>{
+            item.classList.remove("pickedItem");
+        })
     }
 
 }

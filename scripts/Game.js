@@ -23,6 +23,9 @@ export class Game{
             this.#boardData.boardArray,
             this.#onUserAction
         );
+        this.#drawData.drawMenu(
+            this.#onMenuPick
+        );
     }
 
     
@@ -46,6 +49,15 @@ export class Game{
         }  
             
     }
+
+    #onMenuPick(theId){
+        const reference = theGame;
+        reference.#inventoryObj.setCurrentToll(theId.slice(theId.indexOf("-")+1));
+        //draw the update
+        reference.#drawData.onMenuPick(theId);
+
+    }
+
 
     getIdIndex(theId){
         const breakRef = theId.indexOf('-');

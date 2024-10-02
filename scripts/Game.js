@@ -35,10 +35,11 @@ export class Game{
         const theObj = reference.getIdIndex(theId);
         const theTool = reference.#inventoryObj.currentTool;
         //check in general if the types matched for action
+        console.log(theTool.counter);
         if(theTool.isMatchedType(theObj.typeValue) && (theTool.counter > 0 || theTool.counter == -1) ){
             //build tool
             if(theTool.counter > 0){
-                currentTool.subtractCounter();
+                theTool.subtractCounter();
             }else if(theTool.counter == -1){
                 //destrctuion toll...
                 reference.#inventoryObj.addToInventory(theObj.typeValue);

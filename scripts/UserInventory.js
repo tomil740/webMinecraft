@@ -20,7 +20,7 @@ export class UserInventory{
 
     addToInventory(typeVal){
         for(let theToll of this.#tolls){
-            if(theToll == typeVal){
+            if(theToll.actionToType == typeVal){
                 theToll.incressCounter();
             }
         }
@@ -29,6 +29,14 @@ export class UserInventory{
     #initalizeTolls(){
         const theTool = new Tool([3,5],-1,-1);
         this.#tolls.push(theTool);
+        const theTool2 = new Tool([1],-1,-1);
+        this.#tolls.push(theTool2);
+        const theTool3 = new Tool([2,3],-1,-1);
+        this.#tolls.push(theTool3);
+        const theTool4 = new Tool([-1],0,5);
+        this.#tolls.push(theTool4);
+        const theTool5 = new Tool([-1],0,2);
+        this.#tolls.push(theTool5);
     }
 
 }

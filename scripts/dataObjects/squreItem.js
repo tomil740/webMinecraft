@@ -4,8 +4,16 @@ export class SquareItem{
         this.#type = theType;
     }
 
-    get type(){
+    get typeValue(){
+        return this.#type;
+    }
+
+    get typeName(){
         return `squareItemType${this.#type}`;
+    }
+
+    applyNewType(theType){
+        this.#type = theType;
     }
 }
 

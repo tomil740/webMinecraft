@@ -2,12 +2,12 @@ import {SquareItem} from "./squreItem.js";
 
 export class Board{
     #boardArray;
-    #boardElement;
+    //#boardElement;
     constructor(){
         this.#boardArray = [[]];
-        this.#boardElement = document.querySelector("article#gameBoard");
+        //this.#boardElement = document.querySelector("article#gameBoard");
         this.initalizeBoard();
-        this.drawBoard();
+        //this.drawBoard();
     }
 
     get boardArray(){
@@ -34,7 +34,7 @@ export class Board{
         }
         this.#boardArray = cleanBoard;
     }
-
+/*
     drawBoard(){
         //container of 100vh that will be flex column
         //container of 100 wh that will be a flex row
@@ -46,7 +46,7 @@ export class Board{
                 theElement.classList.add("squareItem");
 
                 //add general callBack for click
-                theElement.addEventListener("click",);
+                //theElement.addEventListener("click",);
 
                 //add the extra squarItem type :
                 theElement.classList.add(squareItem.type);
@@ -57,10 +57,7 @@ export class Board{
             this.#boardElement.appendChild(theColumnElement);
         }
     }
-
-    SqureItemAction(){
-        
-    }
+        */
 
 
 }

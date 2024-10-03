@@ -3,7 +3,7 @@ import {theGame} from './starter.js';
 
 export class Game{
     #inventoryObj;
-    #boardData;
+    #boardData; 
     #drawData;
     constructor(inventoryObj,boardData,drawData){
         this.#inventoryObj = inventoryObj;
@@ -35,25 +35,30 @@ export class Game{
         const theObj = reference.getIdIndex(theId);
         const theTool = reference.#inventoryObj.currentTool;
         //check in general if the types matched for action
-        console.log(theTool.counter);
         if(theTool.isMatchedType(theObj.typeValue) && (theTool.counter > 0 || theTool.counter == -1) ){
+            let inventoryObjToDraw = theTool;
+
             //build tool
             if(theTool.counter > 0){
-                theTool.subtractCounter();
+                inventoryObjToDraw.subtractCounter();
             }else if(theTool.counter == -1){
                 //destrctuion toll...
-                reference.#inventoryObj.addToInventory(theObj.typeValue);
+                inventoryObjToDraw = reference.#inventoryObj.getTollById(theObj.typeValue+10);
+                inventoryObjToDraw.incressCounter();
             }
+
             theObj.applyNewType(theTool.actionToType);
             //draw the update item...
             reference.#drawData.updateUiElement(theId,theObj.typeName);
+            reference.#drawData.updateInventoryCounter(inventoryObjToDraw.counter,`squareItemType-${inventoryObjToDraw.id}p`);
         }  
             
     }
 
     #onMenuPick(theId){
         const reference = theGame;
-        reference.#inventoryObj.setCurrentToll(theId.slice(theId.indexOf("-")+1));
+        //get the toll id
+        reference.#inventoryObj.setCurrentToll(theId.slice(theId.indexOf("-")));
         //draw the update
         reference.#drawData.onMenuPick(theId);
 

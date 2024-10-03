@@ -13,7 +13,7 @@ export class Board{
     get boardArray(){
         return this.#boardArray;
     }
-
+ 
     initalizeBoard(){
         const cleanBoard = [];
         for(let column = 0; column < 25; column++){

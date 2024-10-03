@@ -37,13 +37,18 @@ export class DrawData{
 
     drawMenu(onMenuPickData){
         //menu items id
-        const menuItemsId = [6,7,8,9,10];
+        const menuItemsId = [6,7,8,15,11,12];
         const theMenuItem = document.querySelectorAll("#userMenu .menuItem");
         let counter = 0;
         theMenuItem.forEach((menuItem)=>{
             const theId =`squareItemType-${menuItemsId[counter]}`
+            //initalaze the default menu pick 
+            if(counter == 0){
+                this.onMenuPick(theId);
+            }
             //console.log("calledWith",theId)
             menuItem.addEventListener("click",()=>{onMenuPickData(theId)});
+
             counter++;
         })
     }
@@ -56,6 +61,11 @@ export class DrawData{
         }
     }
 
+    updateInventoryCounter(counterVal,itemId2){
+        let itemId = itemId2;
+        document.querySelector(`#userMenu .menuItem p#${itemId}`).textContent = `amount : ${counterVal}`;
+    }
+
     removeAllTypes(theElement){
         for(let classType = 1; classType < 6; classType++){
             theElement.classList.remove(`squareItemType${classType}`);
@@ -65,8 +75,6 @@ export class DrawData{
     onMenuPick(toPick){
         this.cleanMenuPick();
         const current = document.querySelector(`#${toPick}`);
-        console.log(current);
-        console.log(toPick);
         current.classList.add("pickedItem");
     }
 

@@ -3,11 +3,17 @@ export class Tool{
     #actionToType;
     #matchedTypes;
     #counter;
+    #id
 
-    constructor(matchedTypes,counter,actionToType){
+    constructor(matchedTypes,counter,actionToType,id){
         this.#actionToType = actionToType;
         this.#matchedTypes = matchedTypes;
         this.#counter = counter;
+        this.#id = id;
+    }
+
+    get id(){
+        return this.#id;
     }
 
     get actionToType(){
@@ -22,12 +28,14 @@ export class Tool{
         if(this.#counter != -1){
             this.#counter--;
         }
+        return this.#counter;
     }
 
     incressCounter(){
         if(this.#counter != -1){
             this.#counter++;
         }
+        return this.#counter;
     }
 
     isMatchedType(theType){

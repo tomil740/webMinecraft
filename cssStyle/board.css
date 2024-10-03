@@ -26,6 +26,11 @@ article#userMenu .menuItem .menuItemIcon{
     max-height: 55px;
 }
 
+article#userMenu .menuItem  .counterPer{
+    font-size: 17px;
+    text-align: center;
+}
+
 .pickedItem{
     background-color: rgb(199, 157, 157);
     padding: 24px;
@@ -52,10 +57,10 @@ article#gameBoard .boardColumn .squareItem{
 }
 
 article#gameBoard .boardColumn .squareItemType1{
-    background-color: rgba(239, 234, 223, 0.732);
+    background-image: url("/assets/menuIcons/block.png");
 }
 article#gameBoard .boardColumn .squareItemType2{
-    background-color: rgba(151, 112, 27, 0.732);
+    background-image: url("/assets/menuIcons/games.png");
 }
 article#gameBoard .boardColumn .squareItemType3{
     
@@ -64,5 +69,5 @@ article#gameBoard .boardColumn .squareItemType4{
     
 }
 article#gameBoard .boardColumn .squareItemType5{
-    background-color: rgba(49, 187, 31, 0.732);
+    background-image: url("/assets/menuIcons/game.png");
 }

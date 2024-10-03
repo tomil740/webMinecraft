@@ -7,7 +7,7 @@ export class SquareItem{
     get typeValue(){
         return this.#type;
     }
-
+ 
     get typeName(){
         return `squareItemType${this.#type}`;
     }

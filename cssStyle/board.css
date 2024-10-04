@@ -1,5 +1,6 @@
 body{
     all: unset;
+    background-color: rgb(70, 68, 68);
 }
 
 main{
@@ -14,6 +15,7 @@ article#userMenu{
     align-items: center;
     max-width: 100%;
     height: 100vh;
+    background-color: #b3d1dd
 }
 
 article#userMenu .menuItem{
@@ -51,9 +53,12 @@ article#gameBoard .boardColumn{
 }
 
 article#gameBoard .boardColumn .squareItem{
+    margin: 0.09px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     width: 4vw;
     height: 5vh;
-    background-color: #87CEEB;
+    background-image: url("/assets/menuIcons/sky.png");
+    background-size: 3vw;
 }
 
 article#gameBoard .boardColumn .squareItemType1{

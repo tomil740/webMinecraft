@@ -3,22 +3,32 @@ import {SquareItem} from "./squreItem.js";
 export class Board{
     #boardArray;
     //#boardElement;
-    constructor(){
+    constructor(boardTemp,boardXsize,boardYsize){
         this.#boardArray = [[]];
         //this.#boardElement = document.querySelector("article#gameBoard");
-        this.initalizeBoard();
+        this.initalizeBoard(boardTemp,boardXsize,boardYsize);
         //this.drawBoard();
     }
-
+ 
     get boardArray(){
         return this.#boardArray;
     }
  
-    initalizeBoard(){
+    initalizeBoard(boardTemp,boardXsize,boardYsize){
+        //get board temp values
+        const boardTemplate =  this.getMatchedTemBoardValues(boardTemp,boardXsize,boardYsize);
         const cleanBoard = [];
-        for(let column = 0; column < 25; column++){
+        for(let column = 0; column < boardXsize; column++){
             const theColumn = [];
-            for(let row = 0; row < 20; row++){
+            for(let row = 0; row < boardYsize; row++){
+                let objType = -1;
+                for(let templateObj of boardTemplate){
+                    if(column <= templateObj.xPortion && row >= templateObj.yPortion){
+                        objType = templateObj.toType;
+                        break;
+                    }
+                }
+/*
                 let objType = -1;
                 //the ground bottom 40%
                 if(row > 11){
@@ -28,11 +38,21 @@ export class Board{
                 }else if(row == 10){
                     objType = 5;
                 }
+                */
                 theColumn.push(new SquareItem(objType));
             }
             cleanBoard.push(theColumn);
         }
         this.#boardArray = cleanBoard;
+    }
+
+    getMatchedTemBoardValues(boardTemp,boardXsize,boardYsize){
+        for(let tempObj of boardTemp){
+            tempObj.xPortion = parseInt(tempObj.xPortion*boardXsize);
+            tempObj.yPortion = parseInt(tempObj.yPortion*boardYsize);
+        }
+
+        return boardTemp;
     }
 /*
     drawBoard(){

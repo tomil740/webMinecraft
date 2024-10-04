@@ -1,7 +1,7 @@
 import {theGame} from './starter.js';
 
 
-export class Game{
+export class Game{ 
     #inventoryObj;
     #boardData; 
     #drawData;
@@ -14,7 +14,6 @@ export class Game{
 
 
     get boardArray(){
-
         return this.#boardData.boardArray;
     }
 

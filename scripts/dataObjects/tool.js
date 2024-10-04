@@ -28,14 +28,12 @@ export class Tool{
         if(this.#counter != -1){
             this.#counter--;
         }
-        return this.#counter;
     }
 
     incressCounter(){
         if(this.#counter != -1){
             this.#counter++;
         }
-        return this.#counter;
     }
 
     isMatchedType(theType){
@@ -46,4 +44,5 @@ export class Tool{
         }
         return false;
     }
+        
 }

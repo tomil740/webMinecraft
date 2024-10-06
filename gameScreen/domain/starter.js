@@ -1,8 +1,8 @@
-import {Board} from './dataObjects/board.js';
-import {Game} from "./Game.js";
-import {UserInventory} from "./UserInventory.js";
-import {drawData} from "./DrawData.js";
-import {dao} from "./dataLayer/dao.js";
+import {Board} from '../domain/models/board.js';
+import {Game} from "../domain/Game.js";
+import {UserInventory} from "./models/UserInventory.js";
+import {drawData} from "../presntation/DrawData.js";
+import {dao} from "../data/dao.js";
 
 const gameData = localStorage.getItem("gmaeSetup");
 
@@ -19,6 +19,7 @@ for (let i = 0; i < gameData.length; i++) {
 if(outCome.length > 0){
     res.push(Number(outCome));
 }
+
 
 const pickedBoard = dao.getBoardTemp(res[0]);
 

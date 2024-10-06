@@ -57,15 +57,15 @@ article#gameBoard .boardColumn .squareItem{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     width: 4vw;
     height: 5vh;
-    background-image: url("/assets/menuIcons/sky.png");
+    background-image: url("/resources/menuIcons/sky.png");
     background-size: 3vw;
 }
 
 article#gameBoard .boardColumn .squareItemType1{
-    background-image: url("/assets/menuIcons/block.png");
+    background-image: url("/resources/menuIcons/block.png");
 }
 article#gameBoard .boardColumn .squareItemType2{
-    background-image: url("/assets/menuIcons/games.png");
+    background-image: url("/resources/menuIcons/games.png");
 }
 article#gameBoard .boardColumn .squareItemType3{
     
@@ -74,5 +74,5 @@ article#gameBoard .boardColumn .squareItemType4{
     
 }
 article#gameBoard .boardColumn .squareItemType5{
-    background-image: url("/assets/menuIcons/game.png");
+    background-image: url("/resources/menuIcons/game.png");
 }

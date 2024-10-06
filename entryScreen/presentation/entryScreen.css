@@ -6,7 +6,7 @@ html{
 body{
     width: 100vw;
     height: 100vh;
-    background-image: url("/assets/menuIcons/entryScreenBackground.jpg");
+    background-image: url("/resources/menuIcons/entryScreenBackground.jpg");
     background-size: 100vw;
     background-repeat: no-repeat;
 }

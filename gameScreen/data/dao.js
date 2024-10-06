@@ -1,4 +1,4 @@
-import {Tool} from "../dataObjects/tool.js";
+import {Tool} from "../domain/models/tool.js";
 import { BoardTemplate } from "./dataObjects/BoardTemplate.js";
 
 /*

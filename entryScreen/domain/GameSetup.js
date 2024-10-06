@@ -1,11 +1,11 @@
-import {gameSetup} from "../entry.js"
+import {gameSetup} from "../domain/entry.js"
 
 export class GameSetup{
     #rowTiles;
     #columnTiles;
     #worldTemplate;
     #drawObj;
-
+ 
     constructor(drawObj){
         this.#drawObj = drawObj;
         this.#rowTiles = 10;
@@ -35,7 +35,8 @@ export class GameSetup{
 
     #startGame(){
         const reference = gameSetup;
-        let res = drawObj.getFormValues();
-        localStorage.setItem("gmaeSetup",`${res[0]},${res[1]},${reference.worldTemplate}`);
+        let res = reference.drawObj.getFormValues();
+        localStorage.setItem("gmaeSetup",`${reference.worldTemplate},${res[0]},${res[1]}`);
+        window.location.href = '../../gameScreen/presntation/game.html';
     }
 }

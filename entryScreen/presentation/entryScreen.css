@@ -13,6 +13,7 @@ body{
     background-image: url("/resources/menuIcons/entryScreenBackground.jpg");
     background-size: 100vw;
     background-repeat: no-repeat;
+    min-width: 1100px;
 }
 
 main{
@@ -117,3 +118,10 @@ button {
   main .gameRules h3{
     margin: 0;
   } 
+
+@media screen and (max-width:1100px){
+  body{
+    background-image: url("/resources/menuIcons/minicraftBackroundRules.webp");
+    background-repeat:repeat;
+  }
+}

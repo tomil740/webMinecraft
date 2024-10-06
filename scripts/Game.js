@@ -27,6 +27,20 @@ export class Game{
         );
     }
 
+    restGame(){
+        console.log("rest");
+        console.log(this.#boardData);
+
+        this.#boardData.initalizeBoard();
+        console.log(this.#boardData);
+        this.#drawData.drawBoard(
+            this.#boardData.boardArray,
+            this.#onUserAction
+        );
+        this.#inventoryObj.resetTollsCounter();
+        this.#drawData.drawMenu();
+    }
+
     
     #onUserAction(theId){
         const reference = theGame;
@@ -56,10 +70,16 @@ export class Game{
 
     #onMenuPick(theId){
         const reference = theGame;
-        //get the toll id
-        reference.#inventoryObj.setCurrentToll(theId.slice(theId.indexOf("-")));
-        //draw the update
-        reference.#drawData.onMenuPick(theId);
+        //rest but
+        if(theId == "rest"){
+            reference.restGame();
+        }else{
+
+            //get the toll id
+            reference.#inventoryObj.setCurrentToll(theId.slice(theId.indexOf("-")));
+            //draw the update
+            reference.#drawData.onMenuPick(theId);
+        }
 
     }
 

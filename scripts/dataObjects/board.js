@@ -1,9 +1,11 @@
 import {SquareItem} from "./squreItem.js";
 
 export class Board{
+    #boardInitSetup;
     #boardArray;
     //#boardElement;
     constructor(boardTemp,boardXsize,boardYsize){
+        this.#boardInitSetup = [boardTemp,boardXsize,boardYsize];
         this.#boardArray = [[]];
         //this.#boardElement = document.querySelector("article#gameBoard");
         this.initalizeBoard(boardTemp,boardXsize,boardYsize);
@@ -14,7 +16,10 @@ export class Board{
         return this.#boardArray;
     }
  
-    initalizeBoard(boardTemp,boardXsize,boardYsize){
+    initalizeBoard(){
+        const boardTemp = this.#boardInitSetup[0];
+        const boardXsize = this.#boardInitSetup[1];
+        const boardYsize = this.#boardInitSetup[2];
         //get board temp values
         const boardTemplate =  this.getMatchedTemBoardValues(boardTemp,boardXsize,boardYsize);
         const cleanBoard = [];

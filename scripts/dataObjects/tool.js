@@ -24,6 +24,10 @@ export class Tool{
         return this.#counter;
     }
 
+    restCounter(){
+        this.#counter = 0;
+    }
+
     subtractCounter(){
         if(this.#counter != -1){
             this.#counter--;

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entry screen</title>
+    <link rel="stylesheet" type="text/css" href="/cssStyle/entryScreen.css"/>
+
+</head>
+<body>
+    <main>
+        <form>
+            <section class="dropDwonMenusSection">
+                <div>
+                    <label for="rowSize">tiles in a row:</label>
+                    <select id="rowSize" name="rowTiles">
+                    <option value="10">10</option>
+                    <option value="15">15</option>
+                    <option value="20">20</option>
+                    <option value="25">25</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="columnSize">tiles in a column:</label>
+                    <select id="columnSize" name="columnTiles">
+                    <option value="10">10</option>
+                    <option value="15">15</option>
+                    <option value="20">20</option>
+                    <option value="25">25</option>
+                    </select>
+                </div>   
+            </section>
+
+            <section class="worldTemplatePicker">
+                <div id="worldTemplate-0" class="worldTemlateitem">
+                    <img src="/assets/menuIcons/worldTemplate1.png">
+                </div>
+                <div id="worldTemplate-1" class="worldTemlateitem">
+                    <img src="/assets/menuIcons/worldTemplate2.png">
+                </div>
+                <div id="worldTemplate-2" class="worldTemlateitem">
+                    <img src="/assets/menuIcons/worldTemplate1.png">
+                </div>
+                <div id="worldTemplate-3" class="worldTemlateitem">
+                    <img src="/assets/menuIcons/worldTemplate1.png">
+                </div>
+            </section>
+
+
+        </form>   
+
+
+        <section class="actionButsSection">
+            <button id="startBut">start game</button>
+
+            <button class="">How to play</button>
+        </section>
+    </main>
+
+    <script type="module" src="/scripts/entry.js"></script>
+</body> 
+</html>

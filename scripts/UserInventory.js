@@ -24,4 +24,10 @@ export class UserInventory{
     setCurrentToll(pickedToll){
         this.#currentTool = this.getTollById(pickedToll.slice(pickedToll.indexOf("-")+1))
     }
+
+    resetTollsCounter(){
+        for(let toll of this.#tolls){
+            toll.restCounter();
+        }
+    }
 }

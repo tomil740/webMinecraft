@@ -2,6 +2,10 @@
 html{
     all:unset
 }
+h3,p,h2,ol,li{
+  margin: 0;
+}
+
 
 body{
     width: 100vw;
@@ -26,12 +30,28 @@ main form .dropDwonMenusSection{
 }
 main form .dropDwonMenusSection div{
     margin: 55px;
+    font-weight: 400;
+    font-size: 26px;
+    background-color:#4c626a;
+    border-radius: 15px;
+    padding: 12px;
+    color: #ffffff;
+    display: flex;
 } 
+
+main form .dropDwonMenusSection div select{
+  padding:2px 16px;
+  border-radius: 25px;
+  background-color:rgb(76, 98, 106,15%);
+  border: none;
+  color: #fff;
+  font-size: 26px;
+}
+
+
 
 main form .worldTemplatePicker{
     display: flex;
-
-
 }
 
 main form .worldTemplatePicker .worldTemlateitem{
@@ -54,39 +74,46 @@ main form .worldTemplatePicker .worldTemlateitem img{
 
 
 button {
-    margin: 45px;
-
-    font-family: 'minecraft-bold', sans-serif;
-    text-transform: uppercase;
-    font-size: 1.75rem;
-    text-shadow: hsla(0, 0%, 0%, 0.85) 0px 2px 0px;
-    padding: 0.5rem 5rem;
-    color: #fff;
-    background-color: #008943;
-    border: none;
-    border-top: var(--effect-border-size) solid #28d040;
-    border-inline: var(--effect-border-size) solid #0c6e3d;
-    border-bottom: var(--effect-border-size) solid #064d2a;
-    clip-path: var(--border-cutout-path);
-  
-    &:hover {
-      background-color: #0a954e;
-      span {
-        display: inline-block;
-        transform: scale(1.0357);
-      }
-    }
-    &:active {
-      background-color: #008a44;
-      span {
-        transform: scale(1);
-      }
-    }
-    &:focus {
-      outline: none;
-    }
+  background-color: #4c626a; /* Green */
+  border: none;
+  color: #ffffff;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 24px;
+  margin: 55px 105px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  border-radius: 15px;
+  }
+  button:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
   }
 
   main form .worldTemplatePicker .worldTemlateitem.pickedItem{
-    background-color: rgb(194, 200, 203,75%);
+    background-color: rgba(190, 240, 255, 0.75);
   }
+
+ main .gameRules{
+  position: absolute;
+  top: 22%;
+  margin: 0% 10%;
+  padding: 12px 24px;
+  background-image:url("/resources/menuIcons/minicraftBackroundRules.webp");
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  row-gap: 12px;
+  font-size: 24px;
+  border-radius: 20px;
+  visibility: hidden;
+  }
+  main .gameRules2{
+    visibility: visible;
+  }
+  main .gameRules h3{
+    margin: 0;
+  } 

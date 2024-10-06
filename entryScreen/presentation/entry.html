@@ -14,20 +14,20 @@
                 <div>
                     <label for="rowSize">tiles in a row:</label>
                     <select id="rowSize" name="rowTiles">
-                    <option value="10">10</option>
-                    <option value="15">15</option>
-                    <option value="20">20</option>
                     <option value="25">25</option>
+                    <option value="30">30</option>
+                    <option value="35">35</option>
+                    <option value="40">40</option>
                     </select>
                 </div>
 
                 <div>
                     <label for="columnSize">tiles in a column:</label>
                     <select id="columnSize" name="columnTiles">
-                    <option value="10">10</option>
-                    <option value="15">15</option>
                     <option value="20">20</option>
                     <option value="25">25</option>
+                    <option value="30">30</option>
+                    <option value="35">35</option>
                     </select>
                 </div>   
             </section>
@@ -54,8 +54,26 @@
         <section class="actionButsSection">
             <button id="startBut">start game</button>
 
-            <button class="">How to play</button>
+            <button class="rulesBut">How to play</button>
         </section>
+
+        <article class="gameRules">
+            <h3>The setup:</h3>
+            <p>for our game is a 2-dimensional world of "tiles" and a set of tools that the user can toggle between. Each tile has a type that is presented to the user by its texture according to its type, and the tool type the user can apply action to edit the board.</p>
+            <h2>In Practice:</h2>
+            <p>
+                In the current version, we have 3 types of tools and three types of tiles; each tool matches one type of tile. The actions are as follows:
+            </p>
+            <ol>
+                <li>
+                    Collect a tile: To collect a tile and free up the matched place on the board, we need to apply action with a matched tool on a matched tile. Then, the tile will be added to our inventory to use on any free space on the board.
+                </li>
+                <li>
+                    Place a tile: To place a tile, we need to apply it on an empty tile on the board, and to have the matched picked tile in our inventory.
+                </li>
+            </ol>
+
+        </article>
     </main>
 
     <script type="module" src="/entryScreen/domain/entry.js"></script>

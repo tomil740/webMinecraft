@@ -42,9 +42,11 @@ class DrawDataEntry{
     }
 
     #actionButtonInit(startGame){
+        const rulesElement = document.querySelector("main article.gameRules");
         const startButElement = document.querySelector("body #startBut");
-        console.log("actionbut",startButElement)
+        const rulesButElement = document.querySelector("body .actionButsSection .rulesBut");
         startButElement.addEventListener('click', startGame);
+        rulesButElement.addEventListener('mouseover',()=>{rulesElement.classList.toggle("gameRules2")});
     }
 }
 export const drawDataEntry = new DrawDataEntry();

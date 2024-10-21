@@ -2,7 +2,7 @@
 html{
     all:unset
 }
-h3,p,h2,ol,li{
+h3,p,h2,ol{
   margin: 0;
 }
 
@@ -30,6 +30,7 @@ main form .dropDwonMenusSection{
     justify-content: center;
 }
 main form .dropDwonMenusSection div{
+  position: relative;
     margin: 55px;
     font-weight: 400;
     font-size: 26px;
@@ -38,18 +39,45 @@ main form .dropDwonMenusSection div{
     padding: 12px;
     color: #ffffff;
     display: flex;
-} 
+}
 
-main form .dropDwonMenusSection div select{
-  padding:2px 16px;
+main form .dropDwonMenusSection div button#columnSize{
+  margin: 0;
+  padding: 0;
   border-radius: 25px;
   background-color:rgb(76, 98, 106,15%);
   border: none;
   color: #fff;
   font-size: 26px;
 }
+main form .dropDwonMenusSection div ul.DropDwonMenu{
+  visibility:hidden;
+  position: absolute;
+  top: 65%;
+  left: -10%;
+  width: 100%;
+  text-align: center;
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 22px;
+  background-color: rgb(242, 217, 172,85%);
+  border-radius: 35px;
+}
 
-
+main form .dropDwonMenusSection div ul.DropDwonMenu.visable{
+  visibility:visible;
+}
+main form .dropDwonMenusSection div ul.DropDwonMenu li{
+  background-color:#4c656e;
+  width: 50%;
+  padding:15px;
+  margin: 0;
+  border-radius: 25px;
+  margin: 15px;
+}
 
 main form .worldTemplatePicker{
     display: flex;

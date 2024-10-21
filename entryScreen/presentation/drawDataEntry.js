@@ -1,4 +1,57 @@
 class DrawDataEntry{
+    #rowsPick;
+    #columnsPick;
+    constructor(){
+        this.#rowsPick = 25;
+        this.#columnsPick = 20;
+        this.#rowsMenuInit();
+        this.#columnsMenuInit();
+    }
+
+    set columnsPick(pick){
+        this.#columnsPick = pick;
+    }
+
+    set rowsPick(pick){
+        this.#rowsPick = pick;
+    }
+
+    #dropDownMenuInit(theMenu,theBut,isRow){
+        for(let index = 0; index < theMenu.children.length; index++){
+            const a = theMenu.children[index]
+            a.addEventListener("click",()=>{
+                theMenu.classList.toggle("visable");
+                if(isRow){
+                    this.#rowsPick = a.textContent;
+                    theBut.textContent = `tiles in a row: ${this.#rowsPick}`;
+                }else{
+                    this.#columnsPick = a.textContent;
+                    theBut.textContent = `tiles in a column: ${this.#columnsPick}`;
+                }
+            });
+        }
+
+        theBut.addEventListener("click",()=>{
+            theMenu.classList.toggle("visable")});
+    }
+
+    #columnsMenuInit(){
+        const theMenuSec = document.querySelector("main form .dropDwonMenusSection div#columnMenuSec");
+        const theMenu = theMenuSec.querySelector("ul");
+        const theBut = theMenuSec.querySelector("a#columnSize");
+        theBut.textContent = `tiles in a column: ${this.#columnsPick}`;
+
+        this.#dropDownMenuInit(theMenu,theBut,false);
+    }
+
+    #rowsMenuInit(){
+        const theMenuSec = document.querySelector("main form .dropDwonMenusSection div#rowsMenuSec");
+        const theMenu = theMenuSec.querySelector("ul");
+        const theBut = theMenuSec.querySelector("a#rowsSize");
+        theBut.textContent = `tiles in a row: ${this.#columnsPick}`;
+
+        this.#dropDownMenuInit(theMenu,theBut,true);
+    }
 
     drawWorldTem(onPick,startGame){
         //menu items id
@@ -17,7 +70,7 @@ class DrawDataEntry{
         })
 
         this.#actionButtonInit(startGame);
-    }
+    } 
 
     onTemplatePick(toPick){
         this.cleanTemplatePick();
@@ -32,13 +85,8 @@ class DrawDataEntry{
     }
 
     getFormValues(){
-        let res = [];
-        document.querySelectorAll("form .dropDwonMenusSection select")
-        .forEach((item)=>{
-            res.push(item.value);
-        })
 
-        return res;
+        return [this.#rowsPick,this.#columnsPick];
     }
 
     #actionButtonInit(startGame){

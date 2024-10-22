@@ -1,3 +1,8 @@
+/*
+DrawDataEntry:
+The drawData object need to supply all the UI sync from our data,in practice we will use that object to draw 
+any data change to our UI and keep it sync and vi versa to update user inputs to the data 
+*/
 class DrawDataEntry{
     #rowsPick;
     #columnsPick;
@@ -48,8 +53,7 @@ class DrawDataEntry{
         const theMenuSec = document.querySelector("main form .dropDwonMenusSection div#rowsMenuSec");
         const theMenu = theMenuSec.querySelector("ul");
         const theBut = theMenuSec.querySelector("a#rowsSize");
-        theBut.textContent = `tiles in a row: ${this.#columnsPick}`;
-
+        theBut.textContent = `tiles in a row: ${this.#rowsPick}`;
         this.#dropDownMenuInit(theMenu,theBut,true);
     }
 
@@ -68,7 +72,6 @@ class DrawDataEntry{
 
             counter++;
         })
-
         this.#actionButtonInit(startGame);
     } 
 

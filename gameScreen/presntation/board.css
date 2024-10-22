@@ -41,8 +41,6 @@ article#userMenu .menuItem  .counterPer{
 
 
 
-
-
 main article#gameBoard{
     display: flex;
 }
@@ -66,12 +64,6 @@ article#gameBoard .boardColumn .squareItemType1{
 }
 article#gameBoard .boardColumn .squareItemType2{
     background-image: url("/resources/menuIcons/games.png");
-}
-article#gameBoard .boardColumn .squareItemType3{
-    
-}
-article#gameBoard .boardColumn .squareItemType4{
-    
 }
 article#gameBoard .boardColumn .squareItemType5{
     background-image: url("/resources/menuIcons/game.png");

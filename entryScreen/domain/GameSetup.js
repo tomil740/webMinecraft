@@ -1,15 +1,14 @@
 import {gameSetup} from "../domain/entry.js"
 
+/*
+The Game setup object will initalize our game with the matched helper objects 
+*/
 export class GameSetup{
-    #rowTiles;
-    #columnTiles;
     #worldTemplate;
     #drawObj;
  
     constructor(drawObj){
         this.#drawObj = drawObj;
-        this.#rowTiles = 10;
-        this.#columnTiles = 10;
         this.#worldTemplate = 0;
         this.#drawObj.drawWorldTem(this.#onMenuPick,this.#startGame);
     }

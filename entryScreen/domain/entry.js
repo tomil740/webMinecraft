@@ -7,9 +7,9 @@ entry file will be the initalizer file,in practice:
 import {drawDataEntry} from "../presentation/drawDataEntry.js";
 import { GameSetup } from "../domain/GameSetup.js";
 
-export const gameSetup = new GameSetup(drawDataEntry);
+export const gameSetup = new GameSetup(drawDataEntry); 
 
-
+ 
 
 
 

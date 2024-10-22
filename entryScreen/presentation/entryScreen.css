@@ -30,26 +30,30 @@ main form .dropDwonMenusSection{
     justify-content: center;
 }
 main form .dropDwonMenusSection div{
-  position: relative;
+    position: relative;
     margin: 55px;
     font-weight: 400;
     font-size: 26px;
     background-color:#4c626a;
     border-radius: 15px;
-    padding: 12px;
     color: #ffffff;
     display: flex;
 }
 
-main form .dropDwonMenusSection div button#columnSize{
-  margin: 0;
-  padding: 0;
-  border-radius: 25px;
-  background-color:rgb(76, 98, 106,15%);
-  border: none;
-  color: #fff;
-  font-size: 26px;
+main form .dropDwonMenusSection div#columnMenuSec a#columnSize,
+main form .dropDwonMenusSection div#rowsMenuSec a#rowsSize{
+  padding: 12px;
 }
+
+main form .dropDwonMenusSection div#columnMenuSec a#columnSize:hover,
+main form .dropDwonMenusSection div#rowsMenuSec a#rowsSize:hover{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 15px;
+  background-color: wheat;
+  color: #4c626a;
+  font-weight: 700;
+}
+
 main form .dropDwonMenusSection div ul.DropDwonMenu{
   visibility:hidden;
   position: absolute;

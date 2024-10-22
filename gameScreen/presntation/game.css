@@ -18,6 +18,17 @@ article#userMenu{
     background-color: #b3d1dd
 }
 
+main article#userMenu button{
+    margin: 8%;
+    padding: 15%;
+    font-size: 18px;
+    color:rgb(199, 157, 157);
+    background-color: #0c252f;
+    border: none;
+    border-radius: 9px;
+
+}
+
 article#userMenu .menuItem{
     max-width: 100%;
 }
